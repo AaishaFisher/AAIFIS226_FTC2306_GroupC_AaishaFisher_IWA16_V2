@@ -90,19 +90,20 @@ const MONTHS = [
   
     list.innerHTML = /* html */ `
       <dt>Athlete</dt>
-      <dd>${firstName surname}</dd>
+      <dd>${firstName} ${surname}</dd>
   
       <dt>Total Races</dt>
-      <dd>${races}</dd>
+      <dd>${races.length}</dd>
   
       <dt>Event Date (Latest)</dt>
-      <dd>${day month year}</dd>
+      <dd>${day} ${month} ${year}</dd>
   
       <dt>Total Time (Latest)</dt>
-      <dd>${hours.padStart(2, 0) minutes}</dd>
+      <dd>${String(hours).padStart(2, '0')}: ${String(minutes).padStart(2, '0')}}</dd>
     `;
   
     fragment.appendChild(list);
+    return fragment
   }
   
   [NM372], [SV782] = data
