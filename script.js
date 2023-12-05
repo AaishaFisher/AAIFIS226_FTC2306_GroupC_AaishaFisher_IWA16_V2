@@ -66,9 +66,10 @@ const MONTHS = [
   
   // Only edit below this comment
   
-  const createHtml = (athlete) => {
-    firstName, surname, id, races = athlete
-    [date], [time] = races.reverse()
+  const createHtml = (athleteId) => {
+    const athlete = data.response.data[athleteId];
+    const { firstName, surname, races } = athlete;
+    const [latestRace] = races.slice(-1);
   
     const fragment = document.createDocumentFragment();
   
