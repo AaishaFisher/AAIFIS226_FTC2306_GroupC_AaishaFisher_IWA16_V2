@@ -106,6 +106,8 @@ const MONTHS = [
     return fragment
   }
   
-  [NM372], [SV782] = data
-  document.querySelector(NM372).appendChild(createHtml(NM372));
-  document.querySelector(SV782).appendChild(createHtml(SV782));
+  const NM372Fragment = createHtml('SV782');
+document.getElementById('NM372').appendChild(NM372Fragment);
+
+const SV782Fragment = createHtml('SV782');
+  document.getElementById('SV782').appendChild(SV782Fragment);
