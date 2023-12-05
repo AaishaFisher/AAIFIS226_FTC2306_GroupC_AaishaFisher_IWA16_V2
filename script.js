@@ -73,21 +73,20 @@ const MONTHS = [
   
     const fragment = document.createDocumentFragment();
   
-    title = document.createElement(h2);
-    title= id;
+    const title = document.createElement('h2');
+    title.textContent = athlete.id;
     fragment.appendChild(title);
   
-    const list = document.createElement(dl);
+    const list = document.createElement('dl');
   
-    const day = date.getDate();
-    const month = MONTHS[date.month];
-    const year = date.year;
+    const raceDate = new Date(latestRace.Date);
+    const day = raceDate.getDate();
+    const month = MONTHS[raceDate.getMonth()];
+    const year = raceDate.getFullYear();
   
-    first, second, third, fourth = timeAsArray;
-    total = first + second + third + fourth;
-  
-    const hours = total / 60;
-    const minutes = total / hours / 60;
+    const totalTime = latestRace.time.reduce((acc, val) => acc + val, 0);
+    const hours = Math.floor(total / 60);
+    const minutes = totalTime % 60;
   
     list.innerHTML = /* html */ `
       <dt>Athlete</dt>
