@@ -85,7 +85,7 @@ const MONTHS = [
     const year = raceDate.getFullYear();
   
     const totalTime = latestRace.time.reduce((acc, val) => acc + val, 0);
-    const hours = Math.floor(total / 60);
+    const hours = Math.floor(totalTime / 60);
     const minutes = totalTime % 60;
   
     list.innerHTML = /* html */ `
@@ -106,8 +106,8 @@ const MONTHS = [
     return fragment
   }
   
-  const NM372Fragment = createHtml('SV782');
-document.getElementById('NM372').appendChild(NM372Fragment);
+  const NM372Section = document.querySelector('[data-athlete="NM372"]');
+const SV782Section = document.querySelector('[data-athlete="SV782"]');
 
-const SV782Fragment = createHtml('SV782');
-  document.getElementById('SV782').appendChild(SV782Fragment);
+NM372Section.appendChild(createHtml('NM372'));
+SV782Section.appendChild(createHtml('SV782'));
